@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import mhdthasneemp.lib.mvvmbasekotlin.BaseActivity
 import mhdthasneemp.lib.mvvmbasekotlin.Container
-import mvvmkotlin.example.com.example.ActivityManBinding
+import mvvmkotlin.example.com.example.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), UINavigator {
 
