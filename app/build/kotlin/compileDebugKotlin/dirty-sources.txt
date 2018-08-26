@@ -1,0 +1,3 @@
+/Users/admin/Documents/gitrespo/mvvmbasekotlinexample/app/src/main/java/mvvmkotlin/example/com/example/MainViewModel.kt
+/Users/admin/Documents/gitrespo/mvvmbasekotlinexample/app/src/main/java/mvvmkotlin/example/com/example/MainActivity.kt
+/Users/admin/Documents/gitrespo/mvvmbasekotlinexample/app/src/main/java/mvvmkotlin/example/com/example/UINavigator.kt
