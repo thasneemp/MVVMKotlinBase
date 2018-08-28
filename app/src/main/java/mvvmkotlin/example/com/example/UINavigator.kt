@@ -2,5 +2,5 @@ package mvvmkotlin.example.com.example
 
 interface UINavigator {
 
-    fun showToast(name: String)
+    fun showToast(name: String?)
 }

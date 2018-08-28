@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/MVVMKotlinBase.iml" filepath="$PROJECT_DIR$/MVVMKotlinBase.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/mvvmbasekotlin/mvvmbasekotlin.iml" filepath="$PROJECT_DIR$/mvvmbasekotlin/mvvmbasekotlin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mvvmbasekotlinexample.iml" filepath="$PROJECT_DIR$/mvvmbasekotlinexample.iml" />
     </modules>
   </component>
 </project>

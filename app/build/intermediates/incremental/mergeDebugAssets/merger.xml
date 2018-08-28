@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config=":mvvmbasekotlin"><source path="D:\github\kotlinlib\MVVMKotlinBase\mvvmbasekotlin\build\intermediates\packagedAssets\debug"/></dataSet><dataSet config="main"><source path="D:\github\kotlinlib\MVVMKotlinBase\app\src\main\assets"/><source path="D:\github\kotlinlib\MVVMKotlinBase\app\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\github\kotlinlib\MVVMKotlinBase\app\src\debug\assets"/></dataSet></merger>

@@ -1,18 +1,19 @@
 package mvvmkotlin.example.com.example
 
-import mhdthasneemp.lib.mvvmbasekotlin.BaseViewModel
 import android.databinding.ObservableField
+import mhdthasneemp.lib.mvvmbasekotlin.BaseViewModel
 
 
 class MainViewModel : BaseViewModel<UINavigator>() {
-    private val textValue = ObservableField<String>()
-
-    fun showToast() {
-        getNavigator()!!.showToast(textValue.get()!!)
+    fun showMessage() {
+        getNavigator()!!.showToast(getTextValue())
     }
 
-    fun getTextValue(): ObservableField<String> {
-        return textValue
+    private val textValue = ObservableField<String>()
+
+
+    fun getTextValue(): String? {
+        return textValue.get()
     }
 
     fun setTextValue(textValue: String) {

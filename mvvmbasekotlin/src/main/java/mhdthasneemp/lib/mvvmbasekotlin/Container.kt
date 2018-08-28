@@ -27,12 +27,10 @@ open class Container : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        if (broadcastReceiver != null) {
-            unregisterReceiver(broadcastReceiver)
-        }
+        unregisterReceiver(broadcastReceiver)
     }
 
-    private val broadcastReceiver = object : BroadcastReceiver() {
+    private val broadcastReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
 
             if (intent.action.equals(ACTION, ignoreCase = true)) {
@@ -46,7 +44,7 @@ open class Container : AppCompatActivity() {
         }
     }
 
-    open fun onNetworkChanged(networK_CONNECTED: Int) {
+    open fun onNetworkChanged(networkStatus: Int) {
 
     }
 

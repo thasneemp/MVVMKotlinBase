@@ -8,7 +8,7 @@ import mvvmkotlin.example.com.example.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), UINavigator {
 
-    private var myModel: MainViewModel? = null
+    private lateinit var myModel: MainViewModel
 
     override fun getBindingVariable(): Int {
         return BR.viewModel
@@ -20,15 +20,15 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), UINavig
 
     override fun getViewModel(): MainViewModel {
         myModel = MainViewModel()
-        return myModel as MainViewModel
+        return myModel
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        myModel!!.setNavigator(this)
+        myModel.setNavigator(this)
     }
 
-    override fun showToast(name: String) {
+    override fun showToast(name: String?) {
         if (isNetworkAvailable()) {
             Toast.makeText(this, "Network available", Toast.LENGTH_SHORT).show()
         } else {

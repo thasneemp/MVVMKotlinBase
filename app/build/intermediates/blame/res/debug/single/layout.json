@@ -1,6 +1,6 @@
 [
     {
-        "merged": "/Users/muhammed/Desktop/mvvmbasekotlinexample/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
-        "source": "/Users/muhammed/Desktop/mvvmbasekotlinexample/app/src/main/res/layout/activity_main.xml"
+        "merged": "D:\\github\\kotlinlib\\MVVMKotlinBase\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "D:\\github\\kotlinlib\\MVVMKotlinBase\\app\\src\\main\\res\\layout\\activity_main.xml"
     }
 ]

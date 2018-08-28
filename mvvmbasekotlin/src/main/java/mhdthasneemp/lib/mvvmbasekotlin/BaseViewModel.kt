@@ -8,7 +8,7 @@ import java.lang.ref.WeakReference
 abstract class BaseViewModel<N> : ViewModel() {
     private val mIsLoading = ObservableBoolean(false)
 
-    private var mNavigator: WeakReference<N>? = null
+    private lateinit var mNavigator: WeakReference<N>
 
 
     override fun onCleared() {
@@ -24,7 +24,7 @@ abstract class BaseViewModel<N> : ViewModel() {
     }
 
     fun getNavigator(): N? {
-        return mNavigator?.get()
+        return mNavigator.get()
     }
 
     fun setNavigator(navigator: N) {
