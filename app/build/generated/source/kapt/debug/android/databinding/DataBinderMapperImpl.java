@@ -51,6 +51,7 @@ class DataBinderMapperImpl extends android.databinding.DataBinderMapper {
     private static class InnerBrLookup {
         static String[] sKeys = new String[]{
             "_all"
+            ,"textValue"
             ,"viewModel"};
     }
 }

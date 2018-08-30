@@ -1,10 +1,13 @@
 package mvvmkotlin.example.com.example
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.widget.Toast
 import mhdthasneemp.lib.mvvmbasekotlin.BaseActivity
 import mhdthasneemp.lib.mvvmbasekotlin.Container
 import mvvmkotlin.example.com.example.databinding.ActivityMainBinding
+
 
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), UINavigator {
 
@@ -19,13 +22,18 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), UINavig
     }
 
     override fun getViewModel(): MainViewModel {
-        myModel = MainViewModel()
+        myModel = ViewModelProviders.of(this).get(MainViewModel::class.java!!)
         return myModel
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         myModel.setNavigator(this)
+        myModel.getTextValueObserver().observe(this, Observer { user ->
+            Toast.makeText(this, user, Toast.LENGTH_SHORT).show()
+        })
+
+
     }
 
     override fun showToast(name: String?) {

@@ -58,7 +58,7 @@ public class ActivityMainBinding extends android.databinding.ViewDataBinding imp
     };
 
     public ActivityMainBinding(@NonNull android.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        super(bindingComponent, root, 0);
+        super(bindingComponent, root, 1);
         final Object[] bindings = mapBindings(bindingComponent, root, 3, sIncludes, sViewsWithIds);
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];
         this.mboundView0.setTag(null);
@@ -75,7 +75,7 @@ public class ActivityMainBinding extends android.databinding.ViewDataBinding imp
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x2L;
+                mDirtyFlags = 0x4L;
         }
         requestRebind();
     }
@@ -103,6 +103,7 @@ public class ActivityMainBinding extends android.databinding.ViewDataBinding imp
     }
 
     public void setViewModel(@Nullable mvvmkotlin.example.com.example.MainViewModel ViewModel) {
+        updateRegistration(0, ViewModel);
         this.mViewModel = ViewModel;
         synchronized(this) {
             mDirtyFlags |= 0x1L;
@@ -118,6 +119,23 @@ public class ActivityMainBinding extends android.databinding.ViewDataBinding imp
     @Override
     protected boolean onFieldChange(int localFieldId, Object object, int fieldId) {
         switch (localFieldId) {
+            case 0 :
+                return onChangeViewModel((mvvmkotlin.example.com.example.MainViewModel) object, fieldId);
+        }
+        return false;
+    }
+    private boolean onChangeViewModel(mvvmkotlin.example.com.example.MainViewModel ViewModel, int fieldId) {
+        if (fieldId == BR._all) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x1L;
+            }
+            return true;
+        }
+        else if (fieldId == BR.textValue) {
+            synchronized(this) {
+                    mDirtyFlags |= 0x2L;
+            }
+            return true;
         }
         return false;
     }
@@ -132,7 +150,7 @@ public class ActivityMainBinding extends android.databinding.ViewDataBinding imp
         java.lang.String viewModelTextValue = null;
         mvvmkotlin.example.com.example.MainViewModel viewModel = mViewModel;
 
-        if ((dirtyFlags & 0x3L) != 0) {
+        if ((dirtyFlags & 0x7L) != 0) {
 
 
 
@@ -142,12 +160,12 @@ public class ActivityMainBinding extends android.databinding.ViewDataBinding imp
                 }
         }
         // batch finished
-        if ((dirtyFlags & 0x3L) != 0) {
+        if ((dirtyFlags & 0x7L) != 0) {
             // api target 1
 
             android.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView1, viewModelTextValue);
         }
-        if ((dirtyFlags & 0x2L) != 0) {
+        if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
             android.databinding.adapters.TextViewBindingAdapter.setTextWatcher(this.mboundView1, (android.databinding.adapters.TextViewBindingAdapter.BeforeTextChanged)null, (android.databinding.adapters.TextViewBindingAdapter.OnTextChanged)null, (android.databinding.adapters.TextViewBindingAdapter.AfterTextChanged)null, mboundView1androidTextAttrChanged);
@@ -204,7 +222,8 @@ public class ActivityMainBinding extends android.databinding.ViewDataBinding imp
     }
     /* flag mapping
         flag 0 (0x1L): viewModel
-        flag 1 (0x2L): null
+        flag 1 (0x2L): viewModel.textValue
+        flag 2 (0x3L): null
     flag mapping end*/
     //end
 }
