@@ -1,7 +1,7 @@
 package mvvmkotlin.example.com.example
 
-import android.arch.lifecycle.MutableLiveData
 import android.databinding.Bindable
+import android.databinding.ObservableField
 import mhdthasneemp.lib.mvvmbasekotlin.BaseViewModel
 
 
@@ -10,20 +10,16 @@ class MainViewModel : BaseViewModel<UINavigator>() {
         getNavigator()!!.showToast(getTextValue())
     }
 
-    private val textValue = MutableLiveData<String>()
-
+    private val textValue = ObservableField<String>()
 
     @Bindable
     fun getTextValue(): String? {
-        return textValue.value
+        return textValue.get()
     }
 
-    fun getTextValueObserver(): MutableLiveData<String> {
-        return textValue
-    }
 
     fun setTextValue(textValue: String) {
-        this.textValue.value = textValue
+        this.textValue.set(textValue)
         notifyPropertyChanged(BR.textValue)
     }
 }

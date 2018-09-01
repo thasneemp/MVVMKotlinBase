@@ -2,7 +2,6 @@ package mhdthasneemp.lib.mvvmbasekotlin
 
 import android.arch.lifecycle.ViewModel
 import android.databinding.Observable
-import android.databinding.ObservableBoolean
 import android.databinding.PropertyChangeRegistry
 import java.lang.ref.WeakReference
 
@@ -10,18 +9,8 @@ import java.lang.ref.WeakReference
 abstract class BaseViewModel<N> : ViewModel(), Observable {
     private val callbacks: PropertyChangeRegistry = PropertyChangeRegistry()
 
-    private val mIsLoading = ObservableBoolean(false)
-
     private lateinit var mNavigator: WeakReference<N>
 
-
-    fun getIsLoading(): ObservableBoolean {
-        return mIsLoading
-    }
-
-    fun setIsLoading(isLoading: Boolean) {
-        mIsLoading.set(isLoading)
-    }
 
     fun getNavigator(): N? {
         return mNavigator.get()

@@ -1,6 +1,5 @@
 package mvvmkotlin.example.com.example
 
-import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.widget.Toast
@@ -29,9 +28,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), UINavig
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         myModel.setNavigator(this)
-        myModel.getTextValueObserver().observe(this, Observer { user ->
-            Toast.makeText(this, user, Toast.LENGTH_SHORT).show()
-        })
 
 
     }
